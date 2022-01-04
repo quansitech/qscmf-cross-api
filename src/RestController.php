@@ -35,7 +35,7 @@ class RestController extends Controller {
     {
         parent::__construct();
 
-        if(env("QSCMF_INTRANET_API_MP_MAINTENANCE")){
+        if(env("QSCMF_CROSS_API_MP_MAINTENANCE")){
             $this->response('系统维护中', 0, [], 503);
         }
 
