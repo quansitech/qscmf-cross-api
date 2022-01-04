@@ -1,0 +1,34 @@
+{
+    "name": "quansitech/qscmf-cross-api",
+    "description": "qscmf library cross api",
+    "type": "library",
+    "keywords": ["qscmf", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xhiny",
+            "email": "axhiny@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "tiderjian/think-core": "*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "QscmfCrossApi\\": "src/"
+        }
+    },
+    "extra": {
+        "qscmf": {
+            "providers": [
+                "QscmfCrossApi\\QscmfCrossApiProvider"
+            ]
+        }
+    },"repositories": [
+    {
+        "type": "path",
+        "url": "package/tiderjian/think-core"
+    }
+]
+}
