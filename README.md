@@ -144,4 +144,4 @@ class IndexController extends \QscmfCrossApi\RestController
 
 | 设置值                  | 说明           | 默认值 |
 | :---------------------- | :------------- | :----- |
-| QSCMF_CROSS_API_MP_MAINTENANCE | 关闭接口的请求 |        |
+| QSCMF_CROSS_API_MAINTENANCE | 关闭接口的请求 |        |
