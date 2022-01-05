@@ -267,16 +267,11 @@ class RestController extends Controller {
     }
 
     protected function auth($action_name){
-        if(isset($this->_no_check_access) && $this->_no_check_access === true){
-            return true;
-        }
-
         $id = getallheaders()['Authorization'];
         $ip = $_SERVER['SERVER_ADDR'];
         $intranet_api_register_model = new CrossApiRegisterModel();
         if(!$intranet_api_register_model->isExistsApiById($id, $ip,MODULE_NAME, CONTROLLER_NAME, $action_name)){
             $this->response('没有访问权限', 0, '', 403);
         }
-
     }
 }
