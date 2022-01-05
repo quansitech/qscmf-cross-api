@@ -268,7 +268,7 @@ class RestController extends Controller {
 
     protected function auth($action_name){
         $id = getallheaders()['Authorization'];
-        $ip = $_SERVER['SERVER_ADDR'];
+        $ip = get_client_ip();
         $intranet_api_register_model = new CrossApiRegisterModel();
         if(!$intranet_api_register_model->isExistsApiById($id, $ip,MODULE_NAME, CONTROLLER_NAME, $action_name)){
             $this->response('没有访问权限', 0, '', 403);
