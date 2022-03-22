@@ -73,7 +73,7 @@ class RegisterMethod
                 'create_date' => microtime(true)
             ];
 
-            return DB::table('qs_cross_api_register')->insert($insert_data);
+            return DB::table(RegisterMethod::getTableName())->insert($insert_data);
         }
     }
 
@@ -85,7 +85,7 @@ class RegisterMethod
             'api' => $new_api,
         ];
 
-        return DB::table('qs_cross_api_register')->where('sign', $data->sign)->update($update_data);
+        return DB::table(RegisterMethod::getTableName())->where('sign', $data->sign)->update($update_data);
     }
 
     protected function combineMethod($module_name, $controller_name, $action_name){
@@ -93,7 +93,7 @@ class RegisterMethod
     }
 
     protected function fetchDataWithSign(){
-        return DB::table('qs_cross_api_register')->where('sign', $this->sign)->get()->first();
+        return DB::table(RegisterMethod::getTableName())->where('sign', $this->sign)->get()->first();
     }
 
     protected function combineApi($db_api = null){
@@ -115,5 +115,14 @@ class RegisterMethod
 
         return !empty($new_data) ? json_encode($new_data) : "";
 
+    }
+
+    public static function getDbTablePrefix()
+    {
+        return env("DB_PREFIX");
+    }
+
+    public static function getTableName(){
+        return self::getDbTablePrefix().'cross_api_register';
     }
 }

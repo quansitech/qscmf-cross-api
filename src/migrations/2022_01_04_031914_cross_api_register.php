@@ -24,7 +24,7 @@ class CrossApiRegister extends Migration
      */
     public function up()
     {
-        Schema::create('qs_cross_api_register', function (Blueprint $table) {
+        Schema::create(\QscmfCrossApi\RegisterMethod::getTableName(), function (Blueprint $table) {
             $table->string('id', 50);
             $table->string('name', 50);
             $table->string('sign', 50);
@@ -42,7 +42,7 @@ class CrossApiRegister extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qs_cross_api_register');
+        Schema::dropIfExists(\QscmfCrossApi\RegisterMethod::getTableName());
     }
 
     public function afterCmmUp()

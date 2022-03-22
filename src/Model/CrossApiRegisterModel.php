@@ -2,9 +2,7 @@
 
 namespace QscmfCrossApi\Model;
 
-use Gy_Library\GyListModel;
-
-class CrossApiRegisterModel extends GyListModel
+class CrossApiRegisterModel extends \Qscmf\Core\QsListModel
 {
 
     public function fetchApiById($id, $ip){
