@@ -11,21 +11,14 @@ class RegisterMethod
 {
 
     protected $sign;
-    protected $ip;
     protected $name;
     protected $add_data;
     protected $del_data;
 
-    public function __construct($sign, $ip = null, $name = null)
+    public function __construct($sign, $name = null)
     {
         $this->setSign($sign);
-        !is_null($ip) && $this->setIp($ip);
         !is_null($name) && $this->setName($name);
-    }
-
-    public function setIp($ip){
-        $this->ip = $ip;
-        return $this;
     }
 
     public function setName($name){
@@ -67,7 +60,6 @@ class RegisterMethod
             $insert_data = [
                 'id' => $this->genId(),
                 'sign' => $this->sign,
-                'ip' => $this->ip,
                 'name' => $this->name,
                 'api' => $new_api,
                 'create_date' => microtime(true)

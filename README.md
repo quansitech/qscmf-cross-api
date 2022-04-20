@@ -33,9 +33,8 @@ public function up()
 {
     // 添加接口
     // $sign 使用此服务的系统标识
-    // $ip 使用此服务的系统服务器IP（第一次新增时必填）
     // $name 使用此服务的系统名称（第一次新增时必填）
-    $register = new \QscmfCrossApi\RegisterMethod('library_local','xxx','本地');
+    $register = new \QscmfCrossApi\RegisterMethod('library_local','本地');
     
     // 接口路由信息
     // $module_name, $controller_name, $action_name
