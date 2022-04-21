@@ -81,7 +81,7 @@ class RegisterMethod
     }
 
     protected function combineMethod($module_name, $controller_name, $action_name){
-        return implode(',', [strtolower($module_name),strtolower($controller_name),strtolower($action_name)]);
+        return implode(',', [$module_name,$controller_name,$action_name]);
     }
 
     protected function fetchDataWithSign(){
@@ -103,7 +103,7 @@ class RegisterMethod
             });
         }
 
-        $new_data = array_unique(array_values($new_data));
+        $new_data = array_values(array_unique($new_data));
 
         return !empty($new_data) ? json_encode($new_data) : "";
 

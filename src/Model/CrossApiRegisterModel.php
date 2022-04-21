@@ -16,7 +16,7 @@ class CrossApiRegisterModel extends \Qscmf\Core\QsListModel
         if (empty($api) || !is_array($api_list)){
             return false;
         }else{
-            return in_array(implode(',', [strtolower($module_name),strtolower($controller_name),strtolower($action_name)]),$api_list);
+            return in_array(implode(',', [$module_name,$controller_name,$action_name]),$api_list);
         }
     }
 
