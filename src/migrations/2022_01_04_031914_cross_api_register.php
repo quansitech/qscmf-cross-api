@@ -28,7 +28,6 @@ class CrossApiRegister extends Migration
             $table->string('id', 50);
             $table->string('name', 50);
             $table->string('sign', 50);
-            $table->string('ip', 20);
             $table->string('api', 2000);
             $table->decimal('create_date', 14,4);
             $table->unique('sign', 'uq_sign');
