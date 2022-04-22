@@ -28,6 +28,29 @@ composer require quansitech/qscmf-cross-api
 ```text
 v2版本不需要ip字段，需要自行执行数据迁移进行删除
 ```
+```php
+public function up()
+{
+    //
+    if (Schema::hasColumn(\QscmfCrossApi\RegisterMethod::getTableName(), 'ip'))
+    {
+        Schema::table(\QscmfCrossApi\RegisterMethod::getTableName(), function (Blueprint $table) {
+            $table->dropColumn('ip');
+        });
+    }
+
+
+}
+
+
+public function down()
+{
+    //
+    Schema::table(\QscmfCrossApi\RegisterMethod::getTableName(), function (Blueprint $table) {
+        $table->string('ip', 20)->after('sign');
+    });
+}
+```
 
 ## 用法
 
