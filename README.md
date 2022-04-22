@@ -24,6 +24,11 @@
 composer require quansitech/qscmf-cross-api
 ```
 
+## v2升级操作
+```text
+v2版本不需要ip字段，需要自行执行数据迁移进行删除
+```
+
 ## 用法
 
 
