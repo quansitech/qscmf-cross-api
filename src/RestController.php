@@ -73,9 +73,11 @@ class RestController extends Controller {
 
         $this->getVersion();
 
-        $this->route();
-
         //匹配
+    }
+
+    public function index(){
+        $this->route();
     }
 
     protected function filterHandle(){
