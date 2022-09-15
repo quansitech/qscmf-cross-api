@@ -25,5 +25,6 @@
                 "QscmfCrossApi\\QscmfCrossApiProvider"
             ]
         }
-    }
+    },
+    "abandoned": "quansitech/qscmf-api"
 }
